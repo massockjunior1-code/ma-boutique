@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Boutique — Savoirs numériques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-row">
+    <a href="/" class="brand">La Boutique<span class="brand-dot">.</span></a>
+    <nav class="topnav">
+      <button id="btn-orders" class="nav-link">Mes commandes</button>
+      <button id="btn-cart" class="cart-btn">
+        Panier <span id="cart-count" class="cart-count">0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-row">
+    <div>
+      <p class="eyebrow">Ebooks &amp; formations · paiement Mobile Money</p>
+      <h1>Des savoirs qu'on télécharge<br>après avoir payé en un clic.</h1>
+      <p class="hero-sub">Choisis un guide ou une formation, paie par Orange Money ou MTN MoMo, reçois ton lien de téléchargement dès que le paiement est confirmé.</p>
+    </div>
+    <div class="hero-ticket" aria-hidden="true">
+      <div class="ticket-hole"></div>
+      <p class="ticket-label">Reçu</p>
+      <p class="ticket-line">Réf. <span>CMD-XXXXXX</span></p>
+      <p class="ticket-line">Statut <span class="status-pill status-paye">payé</span></p>
+      <div class="ticket-perf"></div>
+      <p class="ticket-footer">Merci pour ton achat</p>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <h2 class="section-title">Catalogue</h2>
+  <div id="catalog" class="catalog">
+    <p class="muted">Chargement du catalogue…</p>
+  </div>
+</main>
+
+<!-- Panier -->
+<aside id="cart-drawer" class="drawer">
+  <div class="drawer-head">
+    <h3>Ton panier</h3>
+    <button id="cart-close" class="icon-btn">✕</button>
+  </div>
+  <div id="cart-items" class="cart-items"></div>
+  <div class="cart-total-row">
+    <span>Total</span>
+    <strong id="cart-total">0 XAF</strong>
+  </div>
+  <button id="btn-checkout" class="btn-primary btn-block">Commander</button>
+</aside>
+<div id="drawer-overlay" class="overlay"></div>
+
+<!-- Modale commande / checkout -->
+<div id="checkout-modal" class="modal-overlay">
+  <div class="modal">
+    <button class="icon-btn modal-close" data-close>✕</button>
+    <div id="checkout-step-form">
+      <h3>Finaliser la commande</h3>
+      <label>Nom complet
+        <input type="text" id="f-name" placeholder="Ton nom" />
+      </label>
+      <label>Numéro Mobile Money
+        <input type="tel" id="f-phone" placeholder="6XX XXX XXX" />
+      </label>
+      <label>Email (optionnel, pour recevoir le lien)
+        <input type="email" id="f-email" placeholder="toi@exemple.com" />
+      </label>
+      <label>Opérateur</label>
+      <div class="operator-row">
+        <label class="operator-choice"><input type="radio" name="operator" value="orange" checked> Orange Money</label>
+        <label class="operator-choice"><input type="radio" name="operator" value="mtn"> MTN MoMo</label>
+      </div>
+      <p id="checkout-error" class="error-text"></p>
+      <button id="btn-place-order" class="btn-primary btn-block">Valider la commande</button>
+    </div>
+
+    <div id="checkout-step-ticket" class="hidden">
+      <div class="ticket-hole"></div>
+      <p class="ticket-label">Reçu de commande</p>
+      <p class="ticket-line">Référence <span id="t-ref"></span></p>
+      <p class="ticket-line">Total <span id="t-total"></span></p>
+      <div class="ticket-perf"></div>
+      <p class="pay-instructions">
+        Envoie ce montant via <strong id="t-operator"></strong> au numéro
+        <strong class="pay-number" id="t-paynumber"></strong>, puis colle l'ID de la transaction ci-dessous.
+      </p>
+      <label>ID de transaction Mobile Money
+        <input type="text" id="f-txid" placeholder="Ex: MP240703.1234.A56789" />
+      </label>
+      <p id="declare-error" class="error-text"></p>
+      <button id="btn-declare" class="btn-primary btn-block">J'ai payé</button>
+      <p class="muted small">Garde ta référence, elle te permet de suivre ta commande dans "Mes commandes".</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modale suivi de commande -->
+<div id="orders-modal" class="modal-overlay">
+  <div class="modal">
+    <button class="icon-btn modal-close" data-close>✕</button>
+    <h3>Suivre ma commande</h3>
+    <label>Identifiant de commande
+      <input type="text" id="f-order-id" placeholder="Colle ton identifiant de commande" />
+    </label>
+    <button id="btn-track" class="btn-primary btn-block">Vérifier</button>
+    <div id="order-status-result"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>La Boutique — propulsée par LGS Web Solutions / HK Technology.</p>
+    <a href="/admin.html" class="admin-link">Espace admin</a>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
