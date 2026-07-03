@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "title": "Créer un bot WhatsApp avec l'IA (guide complet)",
+      "description": "Guide pas-à-pas pour construire et déployer un bot WhatsApp intelligent avec l'API Meta et un modèle IA. Format PDF, 45 pages.",
+      "category": "Ebook",
+      "price": 5000,
+      "currency": "XAF",
+      "cover": "",
+      "fileUrl": "https://exemple.com/lien-vers-le-fichier-a-remplacer",
+      "stock": null,
+      "active": true,
+      "createdAt": "2026-07-03T00:00:00.000Z"
+    },
+    {
+      "id": "p2",
+      "title": "Formation : Automatiser son business avec l'IA",
+      "description": "Formation vidéo en 6 modules pour automatiser la relation client, les ventes et le support avec des outils IA accessibles.",
+      "category": "Formation",
+      "price": 15000,
+      "currency": "XAF",
+      "cover": "",
+      "fileUrl": "https://exemple.com/lien-vers-la-formation-a-remplacer",
+      "stock": 50,
+      "active": true,
+      "createdAt": "2026-07-03T00:00:00.000Z"
+    },
+    {
+      "id": "p3",
+      "title": "Pack de prompts IA pour entrepreneurs",
+      "description": "Plus de 100 prompts prêts à l'emploi pour la rédaction, le marketing et l'automatisation. Format PDF.",
+      "category": "Ebook",
+      "price": 2500,
+      "currency": "XAF",
+      "cover": "",
+      "fileUrl": "https://exemple.com/lien-vers-le-pack-a-remplacer",
+      "stock": null,
+      "active": true,
+      "createdAt": "2026-07-03T00:00:00.000Z"
+    }
+  ],
+  "orders": []
+}
